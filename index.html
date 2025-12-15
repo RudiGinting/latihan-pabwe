@@ -1,0 +1,898 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bank Soal Lengkap PABWE (50 Soal)</title>
+    <style>
+        :root {
+            --primary: #0f172a;
+            --accent: #3b82f6;
+            --success: #22c55e;
+            --error: #ef4444;
+            --bg: #f8fafc;
+            --card: #ffffff;
+        }
+        
+        body {
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            background-color: var(--bg);
+            color: var(--primary);
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+            line-height: 1.6;
+        }
+
+        header {
+            background: linear-gradient(135deg, #1e40af, #3b82f6);
+            color: white;
+            padding: 30px;
+            border-radius: 12px;
+            margin-bottom: 40px;
+            text-align: center;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 { margin: 0; font-size: 1.8rem; }
+        .subtitle { opacity: 0.9; margin-top: 5px; font-size: 0.95rem; }
+
+        .section-title {
+            background: #e2e8f0;
+            padding: 15px 20px;
+            border-radius: 8px;
+            font-weight: 800;
+            color: #334155;
+            margin: 40px 0 20px 0;
+            border-left: 5px solid var(--accent);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .question-card {
+            background: var(--card);
+            padding: 25px;
+            margin-bottom: 20px;
+            border-radius: 10px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+            border: 1px solid #e2e8f0;
+        }
+
+        .q-number {
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: var(--accent);
+            text-transform: uppercase;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        pre {
+            background: #1e293b;
+            color: #f8fafc;
+            padding: 15px;
+            border-radius: 6px;
+            overflow-x: auto;
+            font-family: 'Consolas', monospace;
+            font-size: 0.9rem;
+            border: 1px solid #334155;
+        }
+
+        /* Styling Options */
+        .options { margin-top: 15px; }
+        
+        .options label {
+            display: flex;
+            align-items: flex-start;
+            padding: 10px 12px;
+            margin-bottom: 8px;
+            border: 1px solid #cbd5e1;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.2s;
+            background: #fff;
+        }
+
+        .options label:hover {
+            background-color: #eff6ff;
+            border-color: var(--accent);
+        }
+
+        input[type="radio"] {
+            margin-top: 4px;
+            margin-right: 12px;
+            flex-shrink: 0;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #cbd5e1;
+            border-radius: 6px;
+            font-family: 'Consolas', monospace;
+            font-size: 1rem;
+            margin-top: 10px;
+            box-sizing: border-box;
+        }
+
+        input[type="text"]:focus {
+            outline: none;
+            border-color: var(--accent);
+            background-color: #eff6ff;
+        }
+
+        /* Result Feedback */
+        .feedback {
+            margin-top: 15px;
+            padding: 12px;
+            border-radius: 6px;
+            font-weight: 600;
+            display: none;
+            font-size: 0.95rem;
+        }
+        .correct { background: #dcfce7; color: #15803d; border: 1px solid #86efac; }
+        .incorrect { background: #fee2e2; color: #b91c1c; border: 1px solid #fca5a5; }
+
+        .btn-submit {
+            display: block;
+            width: 100%;
+            padding: 18px;
+            background-color: var(--accent);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            cursor: pointer;
+            margin: 40px 0;
+            transition: background 0.3s;
+        }
+        .btn-submit:hover { background-color: #1d4ed8; }
+
+        .sticky-score {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: white;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+            border: 2px solid var(--accent);
+            z-index: 1000;
+            display: none;
+            min-width: 200px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Ujian PABWE (Simulasi)</h1>
+    <div class="subtitle">50 Soal Lengkap: Paket A (2022) & Paket B (2023)</div>
+</header>
+
+<form id="examForm">
+
+    <div class="section-title">PAKET A: SOAL TAHUN 2022 (30 Nomor)</div>
+
+    <div class="question-card" data-correct="b">
+        <span class="q-number">No. 1</span>
+        <p>Di manakah kode-kode pemrograman PHP harus ditempatkan di dalam file yang berekstensi .php?</p>
+        <div class="options">
+            <label><input type="radio" name="a1" value="a"> Diantara tag &lt;?&gt; dan &lt;/?&gt;</label>
+            <label><input type="radio" name="a1" value="b"> Diantara tag &lt;?php dan ?&gt;</label>
+            <label><input type="radio" name="a1" value="c"> Diantara tag &lt;php&gt; dan &lt;/php&gt;</label>
+            <label><input type="radio" name="a1" value="d"> Diantara tag &lt;php? dan ?php&gt;</label>
+            <label><input type="radio" name="a1" value="e"> Diantara tag &lt;php?&gt; dan &lt;/?&gt;</label>
+        </div>
+        <div class="feedback"></div>
+    </div>
+
+    <div class="question-card" data-correct="a">
+        <span class="q-number">No. 2</span>
+        <p>Setiap variabel pada bahasa pemrograman PHP harus ditulis dengan tanda:</p>
+        <div class="options">
+            <label><input type="radio" name="a2" value="a"> $variabel</label>
+            <label><input type="radio" name="a2" value="b"> define ("variabel")</label>
+            <label><input type="radio" name="a2" value="c"> char variabel</label>
+            <label><input type="radio" name="a2" value="d"> var variabel</label>
+            <label><input type="radio" name="a2" value="e"> CONST variabel</label>
+        </div>
+        <div class="feedback"></div>
+    </div>
+
+    <div class="question-card" data-correct="c">
+        <span class="q-number">No. 3</span>
+        <p>Manakah bentuk yang benar berikut ini untuk mendeklarasikan sebuah variabel pada PHP?<br>
+        i) $3test<br>ii) $_exam<br>iii) $this<br>iv) $That</p>
+        <div class="options">
+            <label><input type="radio" name="a3" value="a"> i) dan ii)</label>
+            <label><input type="radio" name="a3" value="b"> i), ii), iii), dan iv)</label>
+            <label><input type="radio" name="a3" value="c"> ii) dan iv)</label>
+            <label><input type="radio" name="a3" value="d"> i) dan iii)</label>
+            <label><input type="radio" name="a3" value="e"> iii) dan iv)</label>
+        </div>
+        <div class="feedback"></div>
+    </div>
+
+    <div class="question-card" data-correct="e">
+        <span class="q-number">No. 4</span>
+        <p>Pada kode program di bawah ini, hasil luaran menjadi tidak valid jika statement echo yang digunakan adalah:</p>
+        <pre>$string1 = "Ujian";
+$string2 = "Semester";
+echo .................... </pre>
+        <div class="options">
+            <label><input type="radio" name="a4" value="a"> echo $string1 . $string2;</label>
+            <label><input type="radio" name="a4" value="b"> echo "Ujian ", "Semester";</label>
+            <label><input type="radio" name="a4" value="c"> echo $string1 , $string2;</label>
+            <label><input type="radio" name="a4" value="d"> echo "$string1 $string2";</label>
+            <label><input type="radio" name="a4" value="e"> echo Ujian Semester;</label>
+        </div>
+        <div class="feedback"></div>
+    </div>
+
+    <div class="question-card" data-correct="a">
+        <span class="q-number">No. 5</span>
+        <p>Apakah hasil luaran yang ditampilkan dari kode PHP di bawah ini?</p>
+        <pre>$hitung = 97 - 13 * 8 / 2;
+printf("%.02f", $hitung);</pre>
+        <div class="options">
+            <label><input type="radio" name="a5" value="a"> 45</label>
+            <label><input type="radio" name="a5" value="b"> 336</label>
+            <label><input type="radio" name="a5" value="c"> 65</label>
+            <label><input type="radio" name="a5" value="d"> 55</label>
+            <label><input type="radio" name="a5" value="e"> 0</label>
+        </div>
+        <div class="feedback"></div>
+    </div>
+
+    <div class="question-card" data-correct="b">
+        <span class="q-number">No. 6</span>
+        <p>Apakah hasil luaran yang ditampilkan dari kode PHP pada contoh di bawah ini?</p>
+        <pre>if (0) {
+    echo "Kelas 13IF1";
+} else {
+    echo "Kelas 13IF2";
+}</pre>
+        <div class="options">
+            <label><input type="radio" name="a6" value="a"> Kelas 13IF1</label>
+            <label><input type="radio" name="a6" value="b"> Kelas 13IF2</label>
+            <label><input type="radio" name="a6" value="c"> 13IF1</label>
+            <label><input type="radio" name="a6" value="d"> 13IF2</label>
+            <label><input type="radio" name="a6" value="e"> Kelas</label>
+        </div>
+        <div class="feedback"></div>
+    </div>
+
+    <div class="question-card" data-correct="e">
+        <span class="q-number">No. 7</span>
+        <p>Apakah hasil yang ditampilkan dari kode PHP pada contoh di bawah ini?</p>
+        <pre>if (0 and -1) echo "Pagi";
+else if (10 and 20) echo "Siang";
+else echo "Malam";</pre>
+        <div class="options">
+            <label><input type="radio" name="a7" value="a"> Pagi</label>
+            <label><input type="radio" name="a7" value="b"> Malam</label>
+            <label><input type="radio" name="a7" value="c"> Error</label>
+            <label><input type="radio" name="a7" value="d"> Null</label>
+            <label><input type="radio" name="a7" value="e"> Siang</label>
+        </div>
+        <div class="feedback"></div>
+    </div>
+
+    <div class="question-card" data-correct="e">
+        <span class="q-number">No. 8</span>
+        <p>Apakah yang harus dituliskan pada statement echo tersebut jika diinginkan hasil luaran adalah 13IF?</p>
+        <pre>$kelas = array('11IF', '12IF', '13IF', '14IF');
+echo ............. </pre>
+        <div class="options">
+            <label><input type="radio" name="a8" value="a"> $kelas[4]</label>
+            <label><input type="radio" name="a8" value="b"> $kelas[3]</label>
+            <label><input type="radio" name="a8" value="c"> $kelas[1]</label>
+            <label><input type="radio" name="a8" value="d"> $kelas</label>
+            <label><input type="radio" name="a8" value="e"> $kelas[2]</label>
+        </div>
+        <div class="feedback"></div>
+    </div>
+
+    <div class="question-card" data-correct="b">
+        <span class="q-number">No. 9</span>
+        <p>Apakah keluaran yang dihasilkan jika kode PHP berikut dieksekusi?</p>
+        <pre>$array = array(2,4,6,8,5,3);
+$sum = 1;
+for ($i=0; $i&lt;5; $i++) {
+    $sum *= $array[$i];
+}
+echo $sum;</pre>
+        <div class="options">
+            <label><input type="radio" name="a9" value="a"> 5760</label>
+            <label><input type="radio" name="a9" value="b"> 1920</label>
+            <label><input type="radio" name="a9" value="c"> 3840</label>
+            <label><input type="radio" name="a9" value="d"> 2880</label>
+            <label><input type="radio" name="a9" value="e"> 4800</label>
+        </div>
+        <div class="feedback"></div>
+    </div>
+
+    <div class="question-card" data-correct="a">
+        <span class="q-number">No. 10</span>
+        <p>Apakah keluaran yang dihasilkan jika kode PHP berikut dieksekusi?</p>
+        <pre>$buah = array("Apel", "Jeruk", "Mangga");
+echo "Saya suka " . $buah[0] . ", " . $buah[1] . " dan " . $buah[2] . ".";</pre>
+        <div class="options">
+            <label><input type="radio" name="a10" value="a"> Saya suka Apel, Jeruk dan Mangga.</label>
+            <label><input type="radio" name="a10" value="b"> Saya suka Jeruk, Apel dan Mangga.</label>
+            <label><input type="radio" name="a10" value="c"> Saya suka Jeruk, Mangga dan Apel.</label>
+            <label><input type="radio" name="a10" value="d"> Saya suka Apel, Mangga dan Jeruk.</label>
+            <label><input type="radio" name="a10" value="e"> Saya suka Mangga, Jeruk dan Apel.</label>
+        </div>
+        <div class="feedback"></div>
+    </div>
+
+    <div class="question-card" data-correct="e">
+        <span class="q-number">No. 11</span>
+        <p>Pada fungsi di bawah ini manakah pernyataan yang valid untuk memanggil fungsi tersebut adalah:</p>
+        <pre>function calculate($num1, $num2) {
+    $answer = $num1 + $num2;
+    return $answer;
+}</pre>
+        <div class="options">
+            <label><input type="radio" name="a11" value="a"> $result = $calculate(100);</label>
+            <label><input type="radio" name="a11" value="b"> $result = $calculate(40, 60);</label>
+            <label><input type="radio" name="a11" value="c"> $result = calculate();</label>
+            <label><input type="radio" name="a11" value="d"> $result = calculate(90);</label>
+            <label><input type="radio" name="a11" value="e"> $result = calculate(50, 40);</label>
+        </div>
+        <div class="feedback"></div>
+    </div>
+
+    <div class="question-card" data-correct="c">
+        <span class="q-number">No. 12</span>
+        <p>Apakah yang salah pada kode fungsi berikut ini?</p>
+        <pre>function getNilai($jawabanBenar, $bobotNilai) {
+    if ($bobotNilai) {
+        $nilai = $jawabanBenar * $bobotNilai;
+    };
+    return $nilai;
+}</pre>
+        <div class="options">
+            <label><input type="radio" name="a12" value="a"> $nilai pada return menggunakan tanda $.</label>
+            <label><input type="radio" name="a12" value="b"> Seleksi if diakhiri dengan tanda ";".</label>
+            <label><input type="radio" name="a12" value="c"> $bobotNilai pada if tidak ditulis nilai true.</label>
+            <label><input type="radio" name="a12" value="d"> Nama fungsi tidak boleh dimulai dengan "get".</label>
+            <label><input type="radio" name="a12" value="e"> Parameter fungsi tidak memiliki spasi jarak.</label>
+        </div>
+        <div class="feedback"></div>
+    </div>
+
+    <div class="question-card" data-correct="b">
+        <span class="q-number">No. 13</span>
+        <p>Apakah keluaran yang dihasilkan jika kode PHP berikut ini dieksekusi?</p>
+        <pre>function doThis() {
+    $total = func_num_args();
+    echo $total;
+}
+doThis(10, 20);</pre>
+        <div class="options">
+            <label><input type="radio" name="a13" value="a"> 0</label>
+            <label><input type="radio" name="a13" value="b"> 2</label>
+            <label><input type="radio" name="a13" value="c"> 1</label>
+            <label><input type="radio" name="a13" value="d"> 20</label>
+            <label><input type="radio" name="a13" value="e"> 10</label>
+        </div>
+        <div class="feedback"></div>
+    </div>
+
+    <div class="question-card" data-correct="c">
+        <span class="q-number">No. 14</span>
+        <p>Apakah keluaran yang dihasilkan jika kode PHP berikut dieksekusi?</p>
+        <pre>function kalimat1(&$kata) {
+    $kata .= ' PABWE.';
+}
+$kalimat2 = 'Ujian Semester, ';
+kalimat1($kalimat2);
+echo $kalimat2;</pre>
+        <div class="options">
+            <label><input type="radio" name="a14" value="a"> PABWE.</label>
+            <label><input type="radio" name="a14" value="b"> Ujian Semester,</label>
+            <label><input type="radio" name="a14" value="c"> Ujian Semester, PABWE.</label>
+            <label><input type="radio" name="a14" value="d"> Error</label>
+            <label><input type="radio" name="a14" value="e"> PABWE. Ujian Semester,</label>
+        </div>
+        <div class="feedback"></div>
+    </div>
+
+    <div class="question-card" data-correct="b">
+        <span class="q-number">No. 15</span>
+        <p>Manakah pernyataan berikut ini yang benar terkait include dan require?</p>
+        <div class="options">
+            <label><input type="radio" name="a15" value="a"> Baik include() dan require() akan menampilkan pesan kerusakan jika file tidak ada kemudian menghentikan eksekusi.</label>
+            <label><input type="radio" name="a15" value="b"> Baik include() dan include_once() akan menampilkan pesan peringatan jika file tidak ada kemudian melanjutkan eksekusi.</label>
+            <label><input type="radio" name="a15" value="c"> Baik require() dan require_once() akan menampilkan pesan peringatan jika file tidak ada kemudian melanjutkan eksekusi.</label>
+            <label><input type="radio" name="a15" value="d"> Baik include() dan include_once() akan menampilkan pesan kesalahan jika file tidak ada kemudian melanjutkan eksekusi.</label>
+            <label><input type="radio" name="a15" value="e"> Baik require() dan require_once() akan menampilkan pesan kesalahan jika file tidak ada kemudian melanjutkan eksekusi.</label>
+        </div>
+        <div class="feedback"></div>
+    </div>
+
+    <div class="question-card" data-correct="b">
+        <span class="q-number">No. 16</span>
+        <p>Pada baris ke berapa terdapat pernyataan yang salah dari kode PHP berikut ini?</p>
+        <pre>1) $stmt = $this->conn->prepare("DELETE FROM data");
+2) $stmt->bind_param("i", $this->id_data);
+...</pre>
+        <div class="options">
+            <label><input type="radio" name="a16" value="a"> Baris ke-2</label>
+            <label><input type="radio" name="a16" value="b"> Baris ke-6</label>
+            <label><input type="radio" name="a16" value="c"> Baris ke-4</label>
+            <label><input type="radio" name="a16" value="d"> Baris ke-5</label>
+            <label><input type="radio" name="a16" value="e"> Baris ke-1</label>
+        </div>
+        <div class="feedback"></div>
+    </div>
+
+    <div class="question-card" data-correct="d">
+        <span class="q-number">No. 17</span>
+        <p>Dari form berikut ini, manakah pernyataan yang benar yang menerima nilai yang dikirimkan dan menyimpannya ke dalam variabel $sleepHours?</p>
+        <pre>&lt;form method="post"&gt;... name="sleepHours" ...&lt;/form&gt;</pre>
+        <div class="options">
+            <label><input type="radio" name="a17" value="a"> $sleepHours = $_POST[$sleepHours];</label>
+            <label><input type="radio" name="a17" value="b"> $_POST[$sleepHours] = 'sleepHours';</label>
+            <label><input type="radio" name="a17" value="c"> $_POST['sleepHours'] = $sleepHours;</label>
+            <label><input type="radio" name="a17" value="d"> $sleepHours = $_POST['sleepHours'];</label>
+            <label><input type="radio" name="a17" value="e"> $sleepHours = $_POST[$sleepHours];</label>
+        </div>
+        <div class="feedback"></div>
+    </div>
+
+    <div class="question-card" data-correct="d">
+        <span class="q-number">No. 18</span>
+        <p>Manakah kode berikut yang akan menulisi file target.txt dengan isi dari file source.txt?</p>
+        <div class="options">
+            <label><input type="radio" name="a18" value="a"> file_put_contents("target.txt", file_put_contents("source.txt"));</label>
+            <label><input type="radio" name="a18" value="b"> file_put_contents("target.txt", fopen("source.txt", "r"));</label>
+            <label><input type="radio" name="a18" value="c"> file_put_contents("target.txt", fclose("source.txt"));</label>
+            <label><input type="radio" name="a18" value="d"> file_put_contents("target.txt", file_get_contents("source.txt"));</label>
+            <label><input type="radio" name="a18" value="e"> file_put_contents("target.txt", readfile("source.txt"));</label>
+        </div>
+        <div class="feedback"></div>
+    </div>
+
+    <div class="question-card" data-correct="b">
+        <span class="q-number">No. 19</span>
+        <p>Agar kode di bawah ini dapat digunakan membaca isi dari file pabwe.txt, maka baris ke-3 dan baris ke-6 harus diisi dengan kode:</p>
+        <pre>(1)...
+$content = fread($file, filesize($filename));
+fclose(...(2)...);</pre>
+        <div class="options">
+            <label><input type="radio" name="a19" value="a"> (1) $file = fopen($filename, 'x') dan (2) $file</label>
+            <label><input type="radio" name="a19" value="b"> (1) $file = fopen($filename, 'r') dan (2) $file</label>
+            <label><input type="radio" name="a19" value="c"> (1) $file = fopen($filename, 'r') dan (2) $filename</label>
+            <label><input type="radio" name="a19" value="d"> (1) $file = fopen($filename, 'w') dan (2) $file</label>
+            <label><input type="radio" name="a19" value="e"> (1) $file = fopen($filename, 'w') dan (2) $filename</label>
+        </div>
+        <div class="feedback"></div>
+    </div>
+
+    <div class="question-card" data-correct="c">
+        <span class="q-number">No. 20</span>
+        <p>Jika $db adalah sebuah variabel koneksi ke dalam basis data mySql maka pernyataan di bawah ini adalah benar, <strong>kecuali</strong>:</p>
+        <div class="options">
+            <label><input type="radio" name="a20" value="a"> 'data' adalah nama kolom dari tabel basis data.</label>
+            <label><input type="radio" name="a20" value="b"> Tidak ada jawaban yang benar.</label>
+            <label><input type="radio" name="a20" value="c"> Perintah fetch_all akan mengembalikan data dalam bentuk object.</label>
+            <label><input type="radio" name="a20" value="d"> 'table' adalah nama tabel pada suatu tabel basis data.</label>
+            <label><input type="radio" name="a20" value="e"> Perintah pencarian data tersebut menggunakan fungsi query dari mysql.</label>
+        </div>
+        <div class="feedback"></div>
+    </div>
+
+    <div class="question-card" data-correct="e">
+        <span class="q-number">No. 21</span>
+        <p>Jika diinginkan Cookie selama 1 hari manakah pernyataan yang benar terkait parameter waktu berikut?</p>
+        <div class="options">
+            <label><input type="radio" name="a21" value="a"> time() + (604800)</label>
+            <label><input type="radio" name="a21" value="b"> time(604800) + (604800)</label>
+            <label><input type="radio" name="a21" value="c"> time(86400) + (86400)</label>
+            <label><input type="radio" name="a21" value="d"> Tidak ada jawaban yang benar.</label>
+            <label><input type="radio" name="a21" value="e"> time() + (86400)</label>
+        </div>
+        <div class="feedback"></div>
+    </div>
+
+    <div class="question-card" data-correct="b">
+        <span class="q-number">No. 22</span>
+        <p>Manakah pernyataan di bawah ini yang <strong>tidak benar</strong> terkait cookies & session?</p>
+        <div class="options">
+            <label><input type="radio" name="a22" value="a"> Pernyataan pada baris ke-3 dan ke-4.</label>
+            <label><input type="radio" name="a22" value="b"> Pernyataan pada baris ke-1 dan ke-2.</label>
+            <label><input type="radio" name="a22" value="c"> Pernyataan pada baris ke-2 dan ke-3.</label>
+            <label><input type="radio" name="a22" value="d"> Pernyataan pada baris ke-1 dan ke-3.</label>
+            <label><input type="radio" name="a22" value="e"> Pernyataan pada baris ke-2 dan ke-4.</label>
+        </div>
+        <div class="feedback"></div>
+    </div>
+
+    <div class="question-card" data-correct="a">
+        <span class="q-number">No. 23</span>
+        <p>Berdasarkan statement di bawah ini, manakah yang menyatakan nama database dari suatu server basis data?</p>
+        <pre>$connect = mysqli_connect('host', 'this', 'that', 'other');</pre>
+        <div class="options">
+            <label><input type="radio" name="a23" value="a"> other</label>
+            <label><input type="radio" name="a23" value="b"> this</label>
+            <label><input type="radio" name="a23" value="c"> connect</label>
+            <label><input type="radio" name="a23" value="d"> host</label>
+            <label><input type="radio" name="a23" value="e"> that</label>
+        </div>
+        <div class="feedback"></div>
+    </div>
+
+    <div class="question-card" data-correct="e">
+        <span class="q-number">No. 24</span>
+        <p>Deklarasi pada sebuah kelas umumnya melibatkan elemen-elemen berikut ini, kecuali?</p>
+        <div class="options">
+            <label><input type="radio" name="a24" value="a"> Nama kelas</label>
+            <label><input type="radio" name="a24" value="b"> Attribute</label>
+            <label><input type="radio" name="a24" value="c"> Method</label>
+            <label><input type="radio" name="a24" value="d"> Keyword class</label>
+            <label><input type="radio" name="a24" value="e"> Keyword inheritance</label>
+        </div>
+        <div class="feedback"></div>
+    </div>
+
+    <div class="question-card" data-correct="a">
+        <span class="q-number">No. 25</span>
+        <p>Pada kode dibawah ini, bagaimanakah cara memanggil method Sample dari dalam kelas Example itu sendiri?</p>
+        <div class="options">
+            <label><input type="radio" name="a25" value="a"> $this->Sample();</label>
+            <label><input type="radio" name="a25" value="b"> $current->Sample();</label>
+            <label><input type="radio" name="a25" value="c"> $class=new Example()->Sample();</label>
+            <label><input type="radio" name="a25" value="d"> $self->Sample();</label>
+            <label><input type="radio" name="a25" value="e"> $new Sample();</label>
+        </div>
+        <div class="feedback"></div>
+    </div>
+
+    <div class="question-card" data-correct="c">
+        <span class="q-number">No. 26</span>
+        <p>Pada kode PHP berikut ini, manakah statement yang tepat pada titik-titik (1) untuk mengambil properti dari pColor?</p>
+        <div class="options">
+            <label><input type="radio" name="a26" value="a"> return $pColor</label>
+            <label><input type="radio" name="a26" value="b"> return $this->pColor</label>
+            <label><input type="radio" name="a26" value="c"> return $this->pColor</label>
+            <label><input type="radio" name="a26" value="d"> return pColor</label>
+            <label><input type="radio" name="a26" value="e"> return $this->$pColor</label>
+        </div>
+        <div class="feedback"></div>
+    </div>
+
+    <div class="question-card" data-correct="e">
+        <span class="q-number">No. 27</span>
+        <p>Manakah dari keyword pada konsep object berikut ini yang tidak termasuk ke dalam jenis "Access Modifier"?</p>
+        <div class="options">
+            <label><input type="radio" name="a27" value="a"> 2 dan 4</label>
+            <label><input type="radio" name="a27" value="b"> 1 dan 3</label>
+            <label><input type="radio" name="a27" value="c"> 1 dan 2</label>
+            <label><input type="radio" name="a27" value="d"> dan 3</label>
+            <label><input type="radio" name="a27" value="e"> 4 dan 5</label>
+        </div>
+        <div class="feedback"></div>
+    </div>
+
+    <div class="question-card" data-correct="c">
+        <span class="q-number">No. 28</span>
+        <p>Apakah isian titik-titik dari kode berikut ini agar fungsi inheritance dapat berjalan?</p>
+        <div class="options">
+            <label><input type="radio" name="a28" value="a"> (kosong)</label>
+            <label><input type="radio" name="a28" value="b"> (1) abstract dan (2) $this->$bernapas()</label>
+            <label><input type="radio" name="a28" value="c"> Tidak ada jawaban yang benar</label>
+            <label><input type="radio" name="a28" value="d"> (1) extend dan (2) $this->bernapas()</label>
+            <label><input type="radio" name="a28" value="e"> (1) extend dan (2) $this->$bernapas()</label>
+        </div>
+        <div class="feedback"></div>
+    </div>
+
+    <div class="question-card" data-correct="c">
+        <span class="q-number">No. 29</span>
+        <p>Berdasarkan soal inheritance, bagaimanakah instansiasi dari objek tersebut?</p>
+        <div class="options">
+            <label><input type="radio" name="a29" value="a"> $objek = new mamalia; echo $objek->bernafas();</label>
+            <label><input type="radio" name="a29" value="b"> $objek = new animal; echo $objek->bernafas();</label>
+            <label><input type="radio" name="a29" value="c"> $objek = new mamalia; echo $objek->pernapasan();</label>
+            <label><input type="radio" name="a29" value="d"> $objek = new animal; echo $objek->pernapasan();</label>
+            <label><input type="radio" name="a29" value="e"> Tidak ada jawaban yang benar</label>
+        </div>
+        <div class="feedback"></div>
+    </div>
+
+    <div class="question-card" data-correct="a">
+        <span class="q-number">No. 30</span>
+        <p>Manakah pernyataan berikut yang valid untuk mendeklarasikan sebuah method pada suatu class?</p>
+        <div class="options">
+            <label><input type="radio" name="a30" value="a"> i) dan ii)</label>
+            <label><input type="radio" name="a30" value="b"> i) dan iii)</label>
+            <label><input type="radio" name="a30" value="c"> ii) dan iii)</label>
+            <label><input type="radio" name="a30" value="d"> iii) dan iv)</label>
+            <label><input type="radio" name="a30" value="e"> ii) dan iv)</label>
+        </div>
+        <div class="feedback"></div>
+    </div>
+
+    <div class="section-title">PAKET B: SOAL TAHUN 2023 (20 Nomor)</div>
+
+    <div class="question-card" data-correct="b">
+        <span class="q-number">No. 31 (Paket B - 1)</span>
+        <p>Di manakah kode-kode pemrograman PHP harus ditempatkan di dalam file yang berekstensi .php?</p>
+        <div class="options">
+            <label><input type="radio" name="b1" value="a"> Diantara tag &lt;?php dan ?&gt;</label>
+            <label><input type="radio" name="b1" value="b"> Diantara tag &lt;?&gt; dan &lt;/?&gt;</label>
+            <label><input type="radio" name="b1" value="c"> Diantara tag &lt;php?&gt; dan &lt;/?&gt;</label>
+            <label><input type="radio" name="b1" value="d"> Diantara tag &lt;php? dan ?php&gt;</label>
+            <label><input type="radio" name="b1" value="e"> Diantara tag &lt;php&gt; dan &lt;/php&gt;</label>
+        </div>
+        <div class="feedback"></div>
+    </div>
+
+    <div class="question-card" data-correct="a">
+        <span class="q-number">No. 32 (Paket B - 2)</span>
+        <p>Setiap statement pada bahasa pemrograman PHP harus diakhiri dengan tanda:</p>
+        <div class="options">
+            <label><input type="radio" name="b2" value="a"> Semi-colon;</label>
+            <label><input type="radio" name="b2" value="b"> Closing bracket &gt;</label>
+            <label><input type="radio" name="b2" value="c"> Curly brackets {</label>
+            <label><input type="radio" name="b2" value="d"> Period.</label>
+            <label><input type="radio" name="b2" value="e"> Double quote "</label>
+        </div>
+        <div class="feedback"></div>
+    </div>
+
+    <div class="question-card" data-correct="e">
+        <span class="q-number">No. 33 (Paket B - 3)</span>
+        <p>Manakah baris yang yang SALAH pada kode fungsi berikut ini untuk menampilkan hasil dari $nilai?</p>
+        <div class="options">
+            <label><input type="radio" name="b3" value="a"> Baris ke-4.</label>
+            <label><input type="radio" name="b3" value="b"> Baris ke-5.</label>
+            <label><input type="radio" name="b3" value="c"> Baris ke-3.</label>
+            <label><input type="radio" name="b3" value="d"> Baris ke-2.</label>
+            <label><input type="radio" name="b3" value="e"> Baris ke-6.</label>
+        </div>
+        <div class="feedback"></div>
+    </div>
+
+    <div class="question-card" data-correct="c">
+        <span class="q-number">No. 34 (Paket B - 4)</span>
+        <p>Apakah hasil luaran yang ditampilkan dari kode PHP pada contoh di bawah ini?</p>
+        <pre>if (0) {
+    echo "Program Studi";
+} else {
+    echo "Teknik Informatika";
+}</pre>
+        <div class="options">
+            <label><input type="radio" name="b4" value="a"> Program Studi</label>
+            <label><input type="radio" name="b4" value="b"> Teknik</label>
+            <label><input type="radio" name="b4" value="c"> Teknik Informatika</label>
+            <label><input type="radio" name="b4" value="d"> Program Teknik</label>
+            <label><input type="radio" name="b4" value="e"> Program</label>
+        </div>
+        <div class="feedback"></div>
+    </div>
+
+    <div class="question-card" data-correct="b">
+        <span class="q-number">No. 35 (Paket B - 5)</span>
+        <p>Apakah yang harus dituliskan pada statement echo tersebut jika diinginkan hasil luaran adalah 14IF?</p>
+        <div class="options">
+            <label><input type="radio" name="b5" value="a"> $kelas[4]</label>
+            <label><input type="radio" name="b5" value="b"> $kelas[3]</label>
+            <label><input type="radio" name="b5" value="c"> $kelas[1]</label>
+            <label><input type="radio" name="b5" value="d"> $kelas[0]</label>
+            <label><input type="radio" name="b5" value="e"> $kelas[2]</label>
+        </div>
+        <div class="feedback"></div>
+    </div>
+
+    <div class="question-card" data-correct="a">
+        <span class="q-number">No. 36 (Paket B - 6)</span>
+        <p>Apakah yang harus dituliskan pada titik-titik untuk membuat program yang menuliskan angka 5 sampai dengan 99?</p>
+        <pre>$count = 5;
+while ( .......... ) {
+    echo $count; $count++;
+}</pre>
+        <div class="options">
+            <label><input type="radio" name="b6" value="a"> $count &lt;= 99</label>
+            <label><input type="radio" name="b6" value="b"> $number &lt;= 99</label>
+            <label><input type="radio" name="b6" value="c"> $number &lt;= 100</label>
+            <label><input type="radio" name="b6" value="d"> $count &lt;= 100</label>
+            <label><input type="radio" name="b6" value="e"> $count &gt; $number</label>
+        </div>
+        <div class="feedback"></div>
+    </div>
+
+    <div class="question-card" data-correct="d">
+        <span class="q-number">No. 37 (Paket B - 7)</span>
+        <p>Apakah hasil luaran yang ditampilkan dari kode PHP di bawah ini?</p>
+        <pre>$hitung = 88 - 15 * 8 / 3;
+printf("%.02f", $hitung);</pre>
+        <div class="options">
+            <label><input type="radio" name="b7" value="a"> 78</label>
+            <label><input type="radio" name="b7" value="b"> 336</label>
+            <label><input type="radio" name="b7" value="c"> 45</label>
+            <label><input type="radio" name="b7" value="d"> 48</label>
+            <label><input type="radio" name="b7" value="e"> 195</label>
+        </div>
+        <div class="feedback"></div>
+    </div>
+
+    <div class="question-card" data-correct="a">
+        <span class="q-number">No. 38 (Paket B - 8)</span>
+        <p>Keluaran berikut ini akan menjadi tidak valid jika bentuk statemen echo yang digunakan adalah:</p>
+        <pre>$text1 = "Ujian";
+$text2 = "Semester";</pre>
+        <div class="options">
+            <label><input type="radio" name="b8" value="a"> echo $text1+$text2;</label>
+            <label><input type="radio" name="b8" value="b"> echo "$text1 $text2";</label>
+            <label><input type="radio" name="b8" value="c"> echo ("$text1$etxt2");</label>
+            <label><input type="radio" name="b8" value="d"> echo $text1.$text2;</label>
+            <label><input type="radio" name="b8" value="e"> echo $text1, $text2;</label>
+        </div>
+        <div class="feedback"></div>
+    </div>
+
+    <div class="question-card" data-correct="e">
+        <span class="q-number">No. 39 (Paket B - 9)</span>
+        <p>Apakah luaran yang dihasilkan jika kode PHP berikut dieksekusi? (Faktorial 6)</p>
+        <div class="options">
+            <label><input type="radio" name="b9" value="a"> 240</label>
+            <label><input type="radio" name="b9" value="b"> 620</label>
+            <label><input type="radio" name="b9" value="c"> 480</label>
+            <label><input type="radio" name="b9" value="d"> 520</label>
+            <label><input type="radio" name="b9" value="e"> 720</label>
+        </div>
+        <div class="feedback"></div>
+    </div>
+
+    <div class="question-card" data-correct="c">
+        <span class="q-number">No. 40 (Paket B - 10)</span>
+        <p>Apakah luaran yang dihasilkan jika kode PHP berikut dieksekusi? (Array Sum)</p>
+        <pre>$array = array(1,2,3,4,5); ...</pre>
+        <div class="options">
+            <label><input type="radio" name="b10" value="a"> 320</label>
+            <label><input type="radio" name="b10" value="b"> 222</label>
+            <label><input type="radio" name="b10" value="c"> 120</label>
+            <label><input type="radio" name="b10" value="d"> 240</label>
+            <label><input type="radio" name="b10" value="e"> 110</label>
+        </div>
+        <div class="feedback"></div>
+    </div>
+
+    <div class="question-card" data-correct="$this->nim=$nim;" data-type="text">
+        <span class="q-number">No. 41 (Paket B - 11)</span>
+        <p>Pada gambar 1 di atas, tuliskan isian titik-titik ......(1).......untuk mengisi $nim pada fungsi construct!</p>
+        <input type="text" name="b11" placeholder="Masukkan kode jawaban...">
+        <div class="feedback"></div>
+    </div>
+
+    <div class="question-card" data-correct='"Mahasiswa".$prodi."denganNIM".$this->nim;' data-type="text">
+        <span class="q-number">No. 42 (Paket B - 12)</span>
+        <p>Tuliskan isian titik-titik ......(2)...... untuk mengisi keyword echo pada fungsi mahasiswa!</p>
+        <input type="text" name="b12" placeholder="Masukkan kode jawaban...">
+        <div class="feedback"></div>
+    </div>
+
+    <div class="question-card" data-correct="$mamalia->pernapasan();" data-type="text">
+        <span class="q-number">No. 43 (Paket B - 13)</span>
+        <p>Tuliskan isian titik-titik ......(3)...... pada pemanggilan method object mamalia!</p>
+        <input type="text" name="b13" placeholder="Masukkan kode jawaban...">
+        <div class="feedback"></div>
+    </div>
+
+    <div class="question-card" data-correct="$this->bernapas()" data-type="text">
+        <span class="q-number">No. 44 (Paket B - 14)</span>
+        <p>Tuliskan isian titik-titik ......(2)...... agar class Mamalia dapat menggunakan fungsi bernapas dari class Animal!</p>
+        <input type="text" name="b14" placeholder="Masukkan kode jawaban...">
+        <div class="feedback"></div>
+    </div>
+
+    <div class="question-card" data-correct="extends" data-type="text">
+        <span class="q-number">No. 45 (Paket B - 15)</span>
+        <p>Tuliskan isian titik-titik ...... (1) ...... pada class Mamalia agar class Mamalia dapat mewaris perilaku class Animal!</p>
+        <input type="text" name="b15" placeholder="Masukkan keyword...">
+        <div class="feedback"></div>
+    </div>
+
+    <div class="question-card" data-correct="$primaryKey='id_buku';" data-type="text">
+        <span class="q-number">No. 46 (Paket B - 16)</span>
+        <p>Isikan titik-titik (2) pada file model Buku.php untuk menghubungkan tabel buku (Primary Key)!</p>
+        <input type="text" name="b16" placeholder="Masukkan kode...">
+        <div class="feedback"></div>
+    </div>
+
+    <div class="question-card" data-correct="$table='buku';" data-type="text">
+        <span class="q-number">No. 47 (Paket B - 17)</span>
+        <p>Isikan titik-titik (1) pada file model Buku.php untuk nama tabel!</p>
+        <input type="text" name="b17" placeholder="Masukkan kode...">
+        <div class="feedback"></div>
+    </div>
+
+    <div class="question-card" data-correct="$fillable=['judul_buku','author','publisher','year'];" data-type="text">
+        <span class="q-number">No. 48 (Paket B - 18)</span>
+        <p>Isikan titik-titik (3) pada file model Buku.php untuk fillable!</p>
+        <input type="text" name="b18" placeholder="Masukkan kode array...">
+        <div class="feedback"></div>
+    </div>
+
+    <div class="question-card" data-correct="'judul_buku'=>'required|string|max:150'," data-type="text">
+        <span class="q-number">No. 49 (Paket B - 19)</span>
+        <p>Isikan titik-titik (1) pada file controller BukuController.php untuk validasi judul buku!</p>
+        <input type="text" name="b19" placeholder="Masukkan rules validasi...">
+        <div class="feedback"></div>
+    </div>
+
+    <div class="question-card" data-correct="$buku->judul_buku=$request->judul_buku;" data-type="text">
+        <span class="q-number">No. 50 (Paket B - 20)</span>
+        <p>Isikan titik-titik (5) pada file controller BukuController.php untuk menyimpan input data!</p>
+        <input type="text" name="b20" placeholder="Masukkan kode assignment...">
+        <div class="feedback"></div>
+    </div>
+
+    <button type="button" class="btn-submit" onclick="calculateScore()">SELESAI & LIHAT NILAI</button>
+
+</form>
+
+<div id="stickyScore" class="sticky-score">
+    <h3>Nilai Anda</h3>
+    <p id="scoreText">-- / 100</p>
+</div>
+
+<script>
+    function calculateScore() {
+        let score = 0;
+        const totalQuestions = 50;
+        const cards = document.querySelectorAll('.question-card');
+        
+        cards.forEach(card => {
+            const type = card.getAttribute('data-type');
+            const correctAnswer = card.getAttribute('data-correct');
+            const feedback = card.querySelector('.feedback');
+            let userAnswer = '';
+            let isCorrect = false;
+
+            if (type === 'text') {
+                const input = card.querySelector('input[type="text"]');
+                userAnswer = input.value.trim().replace(/\s+/g, '').replace(/'/g, '"').toLowerCase();
+                const cleanCorrect = correctAnswer.replace(/\s+/g, '').replace(/'/g, '"').toLowerCase();
+                
+                // Flexible checking for code answers
+                if (userAnswer === cleanCorrect || userAnswer.includes(cleanCorrect)) {
+                    isCorrect = true;
+                }
+            } else {
+                const selected = card.querySelector('input:checked');
+                if (selected) {
+                    userAnswer = selected.value;
+                    if (userAnswer === correctAnswer) isCorrect = true;
+                }
+            }
+
+            if (isCorrect) {
+                score++;
+                feedback.textContent = "Jawaban Benar! ✓";
+                feedback.className = "feedback correct";
+            } else {
+                feedback.textContent = "Jawaban Salah ✗";
+                feedback.className = "feedback incorrect";
+            }
+            feedback.style.display = 'block';
+        });
+
+        const finalScore = (score / totalQuestions) * 100;
+        const stickyScore = document.getElementById('stickyScore');
+        document.getElementById('scoreText').innerHTML = `<strong>${finalScore.toFixed(0)}</strong><br>(${score} dari ${totalQuestions} benar)`;
+        stickyScore.style.display = 'block';
+        
+        window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
+    }
+</script>
+
+</body>
+</html>
